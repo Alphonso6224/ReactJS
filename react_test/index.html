@@ -11,12 +11,23 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
 </head>
 <body>
-    <h1>Allô !</h1>
-    <div id="mydiv"></div>
+    <div id="root"></div>
 
     <script>
-       hello = () => "Hello World!";
-       document.write(hello());
+       class ShoppingList extends React.Component {
+        render() {
+            return (
+                <div className="shopping-list">
+                    <h1>Shopping List for {this.props.name}</h1>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>WhatsApp</li>
+                        <li>Oculus</li>
+                    </ul>
+                </div>
+            );
+        }
+       }
     </script>
 
 </body>
