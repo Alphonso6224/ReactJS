@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event React</title>
+    <!--  Librairie react -->
+    <script src="../assets/JS/react.development.js"></script>
+    <script src="../assets/JS/react-dom.development.js"></script>
+    <!-- Librairie Babel -->
+    <script src="../assets/JS/babel.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ta page s'affiche !</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class Increment extends React.Component {
+            constructor(props){
+                super(props);
+                this.state = {
+                    count: 0,
+                    disabled: false
+                }
+            }
+
+            componentDidMount(){
+                // if(this.state.disabled)
+                // setInterval(() => {
+                //     this.change(), 0.005
+                // })
+                this.click();
+            }
+            
+            componentDidUpdate(){
+                if(!this.state.disabled){
+                    setInterval(() => {
+                        this.change(), 0.005
+                    })
+                }
+            }
+
+            change(){
+                this.setState({
+                    count: this.state.count + 1
+                })
+                console.log(this.state.count)
+            }
+
+            click(){
+                console.log('fonction click');
+                this.setState({
+                    disabled: true
+                })
+            }
+
+            render(){
+                return(
+                    <div>
+                        <button onClick={this.click}>Start</button> <span>{this.state.count}</span>
+                        <div><button>Stop</button></div> 
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(<Increment/>,
+        document.getElementById('root'));
+    </script>
+</body>
+</html>
