@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.questionContainer {
+    background: black;
+    color: white;
+    padding-block: 3rem;
+    text-align: center;
+    height: 20rem;
+}
+
+button {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+p {
+    margin-top: 3rem;
+    visibility: hidden;
+    background: white;
+    color: black;
+    padding: 0.5rem;
+}
