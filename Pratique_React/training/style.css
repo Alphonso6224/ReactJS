@@ -17,12 +17,36 @@ body {
 button {
     margin-top: 1rem;
     margin-left: 1rem;
+    border: none;
+    padding-block: 0.5rem;
+    padding-inline: 0.9rem;
 }
 
-p {
+.p {
     margin-top: 3rem;
     visibility: hidden;
     background: white;
     color: black;
     padding: 0.5rem;
+}
+
+
+.start {
+    background: green;
+    color:whitesmoke;
+}
+
+.stop {
+    background: red;
+    color: whitesmoke;
+}
+
+.reset {
+    background: rgb(90, 2, 90);
+    color:whitesmoke;
+}
+
+.compteur {
+    font-size: 2rem;
+    margin-inline: 1rem;
 }
